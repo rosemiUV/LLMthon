@@ -23,7 +23,7 @@ El proceso de **Benchmark de Precios de Transferencia** requiere validar manualm
 
 ## 🌟 Características Clave (The Winning Features)
 
-* **🛡️ Navegador Fantasma (Anti-Junk):** Detección automática de "dominios en venta" o páginas caídas para ahorrar costes de API.
+* **🛡️ Navegador Fantasma (Anti-Junk):** Detección automática de "dominios en venta" o páginas caídas para ahorrar costes de API. [Revisar sitemap.xml de la empresa para encontrar páginas que expliquen el funcionamiento de la empresa]
 * **🧠 Deep Context Analysis:** El LLM no solo lee, *entiende*. Clasifica empresas basándose en análisis semántico multilingüe.
 * **📸 Evidencia Forense:** Generación automática de Screenshots con **Time-Stamping**.
 * **✨ Smart Highlighting:** Inyección de CSS en tiempo real para **resaltar en rojo/amarillo** la frase exacta en la web que causó el rechazo (ej. "Subsidiary of...").
