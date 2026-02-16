@@ -92,17 +92,13 @@ Vuelve a navegar para sacar la "Foto de la Evidencia" (Fase 2).
 
 * **Output**: Diccionario JSON plano (Estricto).
 
+```json
 {
     "is_group": boolean,          // True si se debe rechazar por ser Grupo
-    
     "is_manufacturer": boolean,   // True si se debe rechazar por Manufactura
-    
     "service_match": boolean,     // True si los servicios coinciden
-    
     "reasoning": "Explicación breve de 1 línea.",
-    
     "evidence_quote": "Subsidiary of Omega Group",   // <--- VITAL: La frase exacta para el Highlighting
-    
     "confidence_score": 95        // Entero 0-100
 }
 
