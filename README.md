@@ -35,6 +35,8 @@ El proceso de **Benchmark de Precios de Transferencia** requiere validar manualm
 
 ## 🌟 Crear entorno virtual
 
+En anaconda prompt:
+
 * mamba create -n tp-benchmark python=3.11 -y
 * mamba activate tp-benchmark
 
