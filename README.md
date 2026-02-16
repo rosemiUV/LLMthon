@@ -59,14 +59,13 @@ Extrae el texto limpio para enviarlo a la IA (Fase 1).
 * **Input:** `url` (str)
 * **Output:** Diccionario (JSON)
 
-```json
 {
     "status": 200,            // Código HTTP (404, 500, etc.)
     "is_junk": false,         // True si detecta "Domain for sale", "GoDaddy", etc.
     "text_content": "Texto completo y limpio de la web...",
     "error_msg": null         // String descriptivo si hubo error
 }
-```
+
 
 ## 👨‍💻 Guía de Desarrollo & Contratos de API (Squad Roles)
 
@@ -93,7 +92,6 @@ Vuelve a navegar para sacar la "Foto de la Evidencia" (Fase 2).
 
 * **Output**: Diccionario JSON plano (Estricto).
 
-```json
 {
     "is_group": boolean,          // True si se debe rechazar por ser Grupo
     "is_manufacturer": boolean,   // True si se debe rechazar por Manufactura
