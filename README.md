@@ -32,6 +32,14 @@ El proceso de **Benchmark de Precios de Transferencia** requiere validar manualm
 
 ---
 
+
+## 🌟 Crear entorno virtual
+
+* mamba create -n tp-benchmark python=3.11 -y
+* mamba activate tp-benchmark
+
+---
+
 ## 📂 Estructura del Proyecto (Clean Architecture)
 
 El proyecto sigue una arquitectura modular para desacoplar la interfaz, la lógica de negocio y los servicios externos.
