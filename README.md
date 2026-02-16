@@ -66,6 +66,7 @@ Extrae el texto limpio para enviarlo a la IA (Fase 1).
     "text_content": "Texto completo y limpio de la web...",
     "error_msg": null         // String descriptivo si hubo error
 }
+```
 
 ## 👨‍💻 Guía de Desarrollo & Contratos de API (Squad Roles)
 
