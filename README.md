@@ -42,6 +42,77 @@ En anaconda prompt:
 
 ---
 
+## 👨‍💻 Guía de Desarrollo & Contratos de API (Squad Roles)
+
+Para trabajar en paralelo sin romper el código del compañero, cada integrante debe respetar estrictamente los siguientes formatos de entrada y salida (Interfaces).
+
+---
+
+### 🕷️ Rol 1: The Hunter (Web Scraping)
+**Archivo:** `src/modules/scraper.py`
+**Responsabilidad:** Navegación Headless, Extracción de texto y Capturas con Highlighting.
+
+Debe implementar una clase `Scraper` con estas dos funciones independientes:
+
+#### A. Función `extract_text(url)`
+Extrae el texto limpio para enviarlo a la IA (Fase 1).
+* **Input:** `url` (str)
+* **Output:** Diccionario (JSON)
+
+```json
+{
+    "status": 200,            // Código HTTP (404, 500, etc.)
+    "is_junk": false,         // True si detecta "Domain for sale", "GoDaddy", etc.
+    "text_content": "Texto completo y limpio de la web...",
+    "error_msg": null         // String descriptivo si hubo error
+}
+
+## 👨‍💻 Guía de Desarrollo & Contratos de API (Squad Roles)
+
+Para trabajar en paralelo sin romper el código del compañero, cada integrante debe respetar estrictamente los siguientes formatos de entrada y salida (Interfaces).
+
+#### B. Función take_screenshot(url, text_to_highlight)
+Vuelve a navegar para sacar la "Foto de la Evidencia" (Fase 2).
+
+* **Input**: url (str), text_to_highlight (str - Frase corta identificada por el LLM).
+
+* **Lógica**: Buscar la frase en el DOM -> Inyectar CSS (Borde rojo/amarillo) -> Sacar foto.
+
+* **Output**: String (Path relativo a la imagen guardada).
+"evidence/20231027_empresa_X.png"
+
+---
+
+### 🧠 Rol 2: The Analyst (LLM Engine)
+**Archivo:** `src/modules/llm_engine.py`
+**Responsabilidad:** Prompt Engineering y Parsing de JSON.
+
+#### A. Función `analyze(text, client_description)`
+* **Input**: text (str - viene del scraper), client_description (str - viene del usuario).
+
+* **Output**: Diccionario JSON plano (Estricto).
+
+```json
+{
+    "is_group": boolean,          // True si se debe rechazar por ser Grupo
+    "is_manufacturer": boolean,   // True si se debe rechazar por Manufactura
+    "service_match": boolean,     // True si los servicios coinciden
+    "reasoning": "Explicación breve de 1 línea.",
+    "evidence_quote": "Subsidiary of Omega Group",   // <--- VITAL: La frase exacta para el Highlighting
+    "confidence_score": 95        // Entero 0-100
+}
+
+---
+
+### 🏗️ Rol 3: The Architect (Orchestration & UI)
+**Archivo:** `src/app.py` y `src/core/orchestrator.py`
+**Responsabilidad:**
+
+* Unir las piezas (Scraper -> LLM -> Scraper -> Excel).
+* Interfaz visual en Streamlit.
+
+---
+
 ## 📂 Estructura del Proyecto (Clean Architecture)
 
 El proyecto sigue una arquitectura modular para desacoplar la interfaz, la lógica de negocio y los servicios externos.
