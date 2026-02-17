@@ -5,8 +5,25 @@
 ![Playwright](https://img.shields.io/badge/RPA-Playwright-green)
 ![LLM](https://img.shields.io/badge/AI-OpenAI%2FGemini-orange)
 
-> **Solución ganadora para el Datathon 2024.**
-> Automatización inteligente del proceso de Benchmark de Precios de Transferencia mediante Web Scraping avanzado, Análisis con LLMs y Generación de Evidencias Auditables.
+## 🚀 Características
+- **Scraping Inteligente (Anti-Junk):** Detección automática de "dominios en venta" o páginas caídas para ahorrar costes de API.
+- **Análisis Cognitivo:** Un LLM audita la actividad de la empresa.
+- **Evidencia Forense y Smart Highlighting:** Genera capturas de pantalla resaltando la razón del rechazo (ej. "Somos una filial...").
+- **Anti-Bloqueos:** Arquitectura multiproceso para evadir detecciones y crashes.
+- **Semáforo de Confianza:** El sistema marca en amarillo las filas donde la IA duda (<70% confianza) para revisión humana.
+- **🔗 Trazabilidad Total:** El Excel de salida incluye hipervínculos locales directos a la evidencia gráfica.
+
+## 🛠️ Instalación
+1. Instalar dependencias: `pip install -r requirements.txt`
+2. Instalar navegadores: `playwright install`
+3. Configurar `.env` con tu API Key.
+4. Ejecutar: `streamlit run src/app.py`
+
+## 🏗️ Arquitectura
+- **Frontend:** Streamlit
+- **Core:** Python + Pandas
+- **Scraper:** Playwright (Worker Mode)
+- **AI:** Google Gemini
 
 ---
 
@@ -18,17 +35,6 @@ El proceso de **Benchmark de Precios de Transferencia** requiere validar manualm
 3.  **Comparabilidad:** ¿Ofrece los mismos servicios que nuestro cliente?
 
 **TP-Benchmark-AI** reduce este proceso de semanas a minutos, generando un Excel auditado con **evidencias gráficas (capturas de pantalla)** y razonamiento lógico detallado.
-
----
-
-## 🌟 Características Clave (The Winning Features)
-
-* **🛡️ Navegador Fantasma (Anti-Junk):** Detección automática de "dominios en venta" o páginas caídas para ahorrar costes de API. [Revisar sitemap.xml de la empresa para encontrar páginas que expliquen el funcionamiento de la empresa]
-* **🧠 Deep Context Analysis:** El LLM no solo lee, *entiende*. Clasifica empresas basándose en análisis semántico multilingüe.
-* **📸 Evidencia Forense:** Generación automática de Screenshots con **Time-Stamping**.
-* **✨ Smart Highlighting:** Inyección de CSS en tiempo real para **resaltar en rojo/amarillo** la frase exacta en la web que causó el rechazo (ej. "Subsidiary of...").
-* **🚦 Semáforo de Confianza:** El sistema marca en amarillo las filas donde la IA duda (<70% confianza) para revisión humana.
-* **🔗 Trazabilidad Total:** El Excel de salida incluye hipervínculos locales directos a la evidencia gráfica.
 
 ---
 
