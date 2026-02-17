@@ -90,7 +90,7 @@ Vuelve a navegar para sacar la "Foto de la Evidencia" (Fase 2).
 ---
 
 ### 🧠 Rol 2: The Analyst (LLM Engine)
-**Archivo:** `src/modules/llm_engine.py`
+**Archivo:** `src/modules/prompt.py`
 **Responsabilidad:** Prompt Engineering y Parsing de JSON.
 
 #### A. Función `analyze(text, client_description)`
@@ -101,8 +101,7 @@ Vuelve a navegar para sacar la "Foto de la Evidencia" (Fase 2).
 ```json
 {
     "is_group": boolean,          // True si se debe rechazar por ser Grupo
-    "is_manufacturer": boolean,   // True si se debe rechazar por Manufactura
-    "service_match": boolean,     // True si los servicios coinciden
+    "topic_match": boolean,     // True si el tópico de comparación de empresa coincide
     "reasoning": "Explicación breve de 1 línea.",
     "evidence_quote": "Subsidiary of Omega Group",   // <--- VITAL: La frase exacta para el Highlighting
     "confidence_score": 95        // Entero 0-100
@@ -151,7 +150,7 @@ transfer-pricing-benchmark/
 │   │   ├── __init__.py
 │   │   ├── excel_handler.py # Pandas/Openpyxl (Lectura/Escritura/Estilos)
 │   │   ├── scraper.py       # Playwright (Nav, Screenshot, Highlighting)
-│   │   └── llm_engine.py    # Integración API (Prompting & Parsing)
+│   │   └── prompt.py    # Integración API (Prompting & Parsing)
 │   │
 │   └── utils/               # Utilidades Transversales
 │       ├── __init__.py
