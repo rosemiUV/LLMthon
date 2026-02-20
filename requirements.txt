@@ -1,0 +1,12 @@
+streamlit
+pandas
+playwright
+altair
+openpyxl
+python-dotenv
+openai
+google-generativeai
+nest_asyncio
+# --- Comandos para instalar ---
+# pip install -r requirements.txt
+# playwright install
